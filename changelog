@@ -1,0 +1,248 @@
+turnkey-magento-16.1 (1) turnkey; urgency=low
+
+  * Updated Magento to latest upstream version: 2.4.0.
+
+  * Note: Please refer to turnkey-core's 16.1 changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Stefan Davis <stefan@turnkeylinux.org>  Tue, 02 Mar 2021 10:48:18 +1100
+
+turnkey-magento-16.0 (1) turnkey; urgency=low
+
+  * Updated Magento to latest upstream version - 2.4.0.
+
+  * Now includes elasticsearch (7.8.1) from upstream apt repos.
+
+  * Explcitly disable TLS<1.2 (i.e. SSLv3, TLSv1, TLSv1.1). (v15.x
+    TurnKey releases supported TLS 1.2, but could fallback as low as TLSv1).
+
+  * Update SSL/TLS cyphers to provide "Intermediate" browser/client support
+    (suitable for "General-purpose servers with a variety of clients,
+    recommended for almost all systems"). As provided by Mozilla via
+    https://ssl-config.mozilla.org/.
+
+  * Updated all relevant Debian packages to Buster/10 versions; including
+    PHP 7.3.
+
+  * Updated version of mysqltuner script - now installed as per upstream
+    recommendation.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Stefan Davis <stefan@turnkeylinux.org>  Tue, 18 Aug 2020 16:02:20 +1000
+
+turnkey-magento-15.4 (1) turnkey; urgency=low
+
+  * Updated Magento to latest upstream version - 2.3.1.
+
+  * Auto-detect latest upstream version (temporarily disabled - additional
+    config required).
+    [ Stefan Davis ]
+
+  * Updated PHP to 7.2 as required by Magento v2.3.x (installed via
+    deb.suy.org).
+    [ Stefan Davis ]
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 07 Jun 2019 17:43:20 +1000
+
+turnkey-magento-15.3 (1) turnkey; urgency=low
+
+  * Update to latest upstream source 2.2.x version - v2.2.8.
+
+  * Fixed correct display of Admin url in confconsole - closes #1167.
+    [ Stefan Davis ]
+
+  * Updated readme link to Magento 2 update docs (now links to 2.2.x).
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 16 Apr 2019 13:51:30 +1000
+
+turnkey-magento-15.2 (1) turnkey; urgency=low
+
+  * Upgrade to latest upstream source 2.2.x version - v2.2.7.
+
+  * Reduce inithook text relating to Magento keys, moved to doc page.
+    - closes #1299.
+
+  * Tweak conf script to skip release candidate versions and stay on v2.2.x.
+    v2.3.x requires PHP7.1+
+
+ -- Jeremy Davis <jeremy@turnkeylinux.com>  Thu, 07 Feb 2019 14:19:54 +1100
+
+turnkey-magento-15.1 (1) turnkey; urgency=low
+
+  * Upgrade to latest upstream source version - v2.2.6.
+
+  * Rebuild to resolve inadvertent removal of mariadb during sec-updates
+    - part of #1246.
+
+  * Update conf script to always install latest stable release.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.com>  Thu, 22 Nov 2018 10:34:55 +1100
+
+turnkey-magento-15.0 (1) turnkey; urgency=low
+
+  * Upgraded to the latest upstream source version (v2.2.5)
+
+  * update buildcode to work with PHP7.0
+    [ Vlad Kuzmenko <vlad@turnkeylinux.org> ]
+
+  * Install Adminer directly from stretch/main repo
+
+  * Provide "adminer" root-like user for Adminer MySQL access
+
+  * Replace MySQL with MariaDB (drop-in MySQL replacement)
+
+  * Updated version of mysqltuner script
+
+  * Includes PHP7.0 (installed from Debian repos)
+
+  * Updated PHP default settings
+
+  * Remove phpsh (no longer maintained)
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Stefan Davis <stefan@turnkeylinux.com>  Mon, 09 Jul 2018 09:12:59 +1000
+
+turnkey-magento-14.2 (1) turnkey; urgency=low
+
+  * Magento:
+
+    - Upgraded to latest upstream version (2.1.7).
+    - Can be upgraded with Composer after entering keys through
+      inithook or the admin panel.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Anton Pyrogovskyi <anton@turnkeylinux.org>  Sat, 01 Jul 2017 21:39:58 +0300
+
+turnkey-magento-14.1 (1) turnkey; urgency=low
+
+  * Installed security updates.
+
+  * Installed updated packages from TurnKey repo
+      - includes relevant Webmin packages (v1.780)
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 01 Mar 2016 16:28:45 +1100
+
+turnkey-magento-14.0 (1) turnkey; urgency=low
+
+  * Magento:
+
+    - Downloads latest public upstream version (v1.9.1.0)
+    - Then uses copmmandline tool 'mage' to update to real 
+      latest upstream version (1.9.2.1)
+
+  * Replaced PHPMyAdmin with Adminer
+
+  * Hardened default SSL settings
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 18 Jun 2015 22:58:12 +1000
+
+turnkey-magento-13.0 (1) turnkey; urgency=low
+
+  * Magento:
+
+    - Bugfix: PHP Extensions "0" must be loaded error [#70].
+
+  * PHPMyAdmin:
+
+    - Configured to allow users preferences stored in database.
+    - Specified blowfish_secret and regeneration on firstboot (security).
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Thu, 10 Oct 2013 18:16:34 +0300
+
+turnkey-magento-12.1 (1) turnkey; urgency=low
+
+  * Upgraded to latest version of Magento.
+
+  * Added phpsh (interative shell for PHP) and php5-cli (generically useful).
+
+  * Upstream source component versions:
+
+    magento         1.7.0.2
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Fri, 05 Apr 2013 08:00:00 +0200
+
+turnkey-magento-12.0 (1) turnkey; urgency=low
+
+  * Magento: Upgraded to latest upstream archive.
+
+  * Major component versions
+
+    magento         1.6.2.0 (upstream archive)
+    apache2         2.2.16-6+squeeze7
+    mysql-server    5.1.63-0+squeeze1
+    phpmyadmin      4:3.3.7-7
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 01 Aug 2012 08:00:00 +0200
+
+turnkey-magento-11.3 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Enabled etckeeper garbage collection by default.
+  * Upgraded to latest inithooks version (adhoc re-initialization via turnkey-init)
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 05 Dec 2011 10:48:44 +0000
+
+turnkey-magento-11.2 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Added HubDNS package and firstboot configuration.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Fri, 15 Jul 2011 07:47:08 +0000
+
+turnkey-magento-11.1 (1) turnkey; urgency=low
+
+  * Initial public release of TurnKey Linux Magento.
+
+  * Magento related:
+
+    - Set admin email, password and domain on firstboot (convenience, security).
+    - Includes hourly cron job for maintenance.
+
+  * MySQL related:
+
+    - Set MySQL root password on firstboot (convenience, security).
+    - Force MySQL to use Unicode/UTF8.
+    - Includes PhpMyAdmin (listening on port 12322 - uses SSL).
+
+  * SSL support out of the box.
+
+  * Regenerates all secrets during installation / firstboot (security).
+
+  * Includes php-xcache PHP opcode cacher / optimizer (performance).
+
+  * Includes postfix MTA (bound to localhost) for sending of email (e.g.
+    password recovery). Also includes webmin postfix module for convenience.
+
+  * Major component versions:
+
+    magento         1.4.1.1 (upstream tarball)
+    mysql-server    5.1.41-3ubuntu12.8
+    apache2         2.2.14-5ubuntu8.4
+    phpmyadmin      4:3.3.2-1
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Sun, 19 Dec 2010 15:01:05 +0200
+

@@ -1,0 +1,15 @@
+#include <turnkey/base>
+#include <turnkey/lamp>
+
+
+php-cli
+php-curl
+php-gd
+php-mbstring
+php-zip
+php-intl
+php-xsl
+php-soap
+php-bcmath
+php-mysql
+php-iconv
